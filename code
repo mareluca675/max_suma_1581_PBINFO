@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    ifstream fin("max_suma.in");
+    ofstream fout("max_suma.out");
+    
+    int m, n, s = 0, maxi = -1, a, i, j;
+    
+    fin >> n >> m;
+    
+    for(i = 1; i <= n; i ++)
+    {
+        s = 0;
+        maxi = -1;
+        
+        for(j = 1; j <= m; j ++)
+        {
+            fin >> a;
+            
+            if(a > maxi)
+            {
+                maxi = a;
+            }
+            
+            s += a;
+        }
+        
+        fout << maxi << " " << s << endl;
+    }
+
+    return 0;
+}
